@@ -2,22 +2,22 @@
 
 
 
-void check_hp(int hp)
+void check_status( int hp)
 {
-    if(hp <= 0){
-        printf("You die\n");
+    if(hp<= 0){
+        printf("You die!\n");
+        return;
     }
-    else{
-        printf("You alive!\n");
-    }
+
+
+    printf("Hp: %d. You alive!\n", hp);
+    check_status(hp - 5);
 }
 
 
 int main(void)
 {
-    int hp = 20;
-    check_hp(hp);
+    int hp = 100;
+    check_status(hp);
     return 0;
-
-    
 }
